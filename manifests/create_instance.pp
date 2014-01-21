@@ -8,6 +8,8 @@ define memcache::create_instance (
     fail('please, specify bind_address')
   }
 
+  notify {$name : }
+  
   memcached::instance { "$name-$port":
     bind_address  => $bind_address,
     port          => $port,
